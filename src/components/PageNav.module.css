@@ -1,39 +1,34 @@
 .nav {
-    background-color: aliceblue;
-    padding: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: .5rem;
-    font-size: large;
-    font-weight: bold;
-
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
-.nav li {
-    margin: 0 1rem;
-
+.nav a:link,
+.nav a:visited {
+  text-decoration: none;
+  color: var(--color-light--2);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-.nav a {
-    text-decoration: none;
-    color: cadetblue
+/* CSS Modules feature */
+.nav a:global(.active) {
+  color: var(--color-brand--2);
 }
 
-/* 
-The below class applies to any class name which is "test" so if we wanted to apply the styles to a class name of "test" we would use the below code
- :global(.test) {
-    background-color: darkblue;
-} 
-*/
-
-/* 
-when we  use NavLink from react-router-dom it will add a class of active to the active link so in the below code we are changing the color of the active link to royalblue. You cant use .nav .active because the css modules will generate a unique class name for the .nav class so we have to use :global(.active) to target the active class.
-If you want to use it in global css file you can use .nav .active
-*/
-.nav :global(.active) {
-    color: royalblue;
+a.ctaLink:link,
+a.ctaLink:visited {
+  background-color: var(--color-brand--2);
+  color: var(--color-dark--0);
+  padding: 0.8rem 2rem;
+  border-radius: 7px;
 }
